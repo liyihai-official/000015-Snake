@@ -31,10 +31,10 @@ int main (int argc, char ** argv)
   // for (auto const & ele : Body) std::cout << ele << "\n";
   // std::cout << std::endl;
 
-  Snake AS;
+  Snake Player;
   
   Map map;
-  std::cout << AS << std::endl;
+  std::cout << Player << std::endl;
 
   Direction RR {Down};
   InitWindow(1620, 1080, "Title");
@@ -45,7 +45,7 @@ int main (int argc, char ** argv)
     BeginDrawing();
     ClearBackground(WHITE);
 
-    RaylibDraw(map, AS);
+    RaylibDraw(map, Player);
     
     Bool F {false};
 
@@ -54,7 +54,7 @@ int main (int argc, char ** argv)
 
 
     if (GAME == NotOver) {
-      AS.move(RR, F, map);
+      Player.move(RR, F, map);
     } else {
       DrawRectangle(0, 0, 1920, 1080, {0, 0, 0, 128});
       DrawText("Game Over!", 560-100, 500, 40, BLACK);

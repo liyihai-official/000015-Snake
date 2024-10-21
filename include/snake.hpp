@@ -108,11 +108,7 @@ struct Map
 
   Map() : Food {Coord {10, 0}}, RNG_X (0, X_NUM-1), RNG_Y (0, Y_NUM-1)  {};
 
-
-  void NewFood()
-  {
-    Food = Coord{RNG_Y.getRandom(), RNG_X.getRandom()};
-  }
+  void NewFood() { Food = Coord{RNG_Y.getRandom(), RNG_X.getRandom()}; }
 
   friend class Coord;
   friend void RaylibDraw(const Map &);
